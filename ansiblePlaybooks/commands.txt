@@ -1,0 +1,15 @@
+#regular commands:
+
+ansible localhost -a "free -m"
+ansible all -m command -a "git --version"
+ansible all -m shell -a "git --version"
+ansible appservers -m shell -a "ps -ef | grep -i ansible"
+ansible all -m apt -b  -a "name=git state=latest"
+ansible all -m package -a "name=git state=latest" -b
+ansible-doc -l
+ansible-doc shell
+
+
+ansible appservers -b -m apt -a "name=apache2 state=present"
+ansible appservers -b -m copy -a "src=index.html dest=/var/www/html/index.html"
+ansible all -m service -a "name=apache2 state=started" -b
