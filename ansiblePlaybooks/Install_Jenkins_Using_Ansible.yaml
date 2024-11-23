@@ -1,0 +1,39 @@
+- hosts: jenkinsserver
+  become: true
+  tasks:
+  - name: Update apt repo
+    shell: apt-get update -y
+  - name: Install Openjdk
+    apt:
+      name: openjdk-17-jre-headless
+      state: present
+  - name: Download Jenkins Repo
+    get_url:
+      url: https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+      dest: /usr/share/keyrings/jenkins-keyring.asc
+  - name: adding jenkins to apt repo
+    shell: echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+  - name: Update apt repo
+    shell: apt-get update -y
+  - name: Install Jenkins
+    package:
+      name: jenkins
+      state: present
+  - name: start Jenkins service
+    service:
+      name: jenkins
+      state: started
+  - name: Enable jenkins service
+    service:
+      name: jenkins
+      enabled: true
+  - name: sleep for 30 seconds or wait for port 8080 to listen
+    wait_for:
+      delay: 30
+      port: 8080
+  - name: get initial admin password
+    shell: cat /var/lib/jenkins/secrets/initialAdminPassword
+    register: jenkinspass
+  - name: print jenkins password
+    debug:
+      var: jenkinspass.stdout
