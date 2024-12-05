@@ -1,6 +1,19 @@
 Install "Deploy to container" Plugin 
+
 configure tomcat server with credentials
   credentials -> system -> Global credentials -> Add Credentials
     :) Tomcat user with role(manager-script) = if one system want to access another system
     Kind: username with password
     ID and description: tomcat_deployer
+
+Post Build Action:
+  Deploy war/ear to a container:
+    war/ear file: **/*.war
+      /var/lib/jenkins/workspace/<jobname>/webapp/target/*.war/ear
+    containers:
+      Tomcat 8.x
+        credentials
+        http://tomcatip:8080/
+
+deploy *.war/ear to tomcat server
+  /opt/tomcat/webapps/*.war/ear
