@@ -1,0 +1,41 @@
+sudo apt install openjdk-17-jre-headless
+
+cd /opt 
+
+sudo wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.97/bin/apache-tomcat-9.0.97.tar.gz
+
+sudo tar -xvf apache-tomcat-9.0.97.tar.gz
+
+sudo mv apache-tomcat-9.0.97 tomcat
+
+cd /opt/tomcat/bin/
+        sh startup.sh
+        sh shutdown.sh   [OR]
+        sudo ln -s /opt/tomcat/bin/startup.sh /usr/local/bin/tomcatup
+        sudo ln -s /opt/tomcat/bin/shutdown.sh /usr/local/bin/tomcatdown
+        tomcatdown
+        tomcatup
+
+403 ERROR for Accessing MANAGER APP and HOST MANAGER
+        find . -name context.xml
+        vi webapps/host-manager/META-INF/context.xml
+        vi webapps/manager/META-INF/context.xml
+                comment: 
+                <!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+                          allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
+
+Access but will ask for credentials
+
+cd /opt/tomcat/conf/
+        vi tomcat-users.xml
+          <role rolename="manager-gui"/>
+          <role rolename="manager-script"/>
+          <role rolename="manager-jmx"/>
+          <role rolename="manager-status"/>
+          <user username="admin" password="admin" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
+          <user username="deployer" password="deployer" roles="manager-script"/>
+          <user username="tomcat" password="tomcat" roles="manager-gui"/>
+</tomcat-users>
+   
+                
+        
