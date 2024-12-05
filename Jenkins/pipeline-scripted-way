@@ -22,4 +22,16 @@ node {
         //junit '**/target/surefire-reports/TEST-*.xml'
         archiveArtifacts 'target/*.war'
     }
+    stage('Deploy war/ear to Cotainer') {
+        //deploy adapters: [tomcat8(credentialsId: 'tomcat_deployer', path: '', url: 'http://3.110.194.62:8080/')], contextPath: null, war: '**/*.war'
+        sshagent(['ssh-agent-jenkins-pipelines']) {
+    // some block
+}
+    }
+    stage('sendEmailNotification'){
+        emailext body: '''Build is Over!!
+
+Regards,
+Manoj''', subject: 'Build is Over!!', to: 'pmmanoj1997@gmail.com'
+    }
 }
