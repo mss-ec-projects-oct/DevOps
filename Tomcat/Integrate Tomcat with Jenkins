@@ -1,0 +1,6 @@
+Install "Deploy to container" Plugin 
+configure tomcat server with credentials
+  credentials -> system -> Global credentials -> Add Credentials
+    :) Tomcat user with role(manager-script) = if one system want to access another system
+    Kind: username with password
+    ID and description: tomcat_deployer
