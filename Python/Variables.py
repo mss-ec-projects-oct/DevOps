@@ -21,3 +21,7 @@ x, y, z = "alpha", "beta", 5
 print("variable x value is", x)
 print("variable y value is", y)
 print("variable z value is", z)
+
+print(type(x))
+print(type(y))
+print(type(z))
