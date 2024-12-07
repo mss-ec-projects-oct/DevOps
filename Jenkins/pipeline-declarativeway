@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+tools {
+  maven 'maven3.9'
+}
+    stages {
+        stage('checkoutcode') {
+            steps {
+                git 'https://github.com/pmmanoj650/maven-web-application.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sshagent(['ssh-agent-jenkins-pipelines']) {
+    // some block
+    sh 'scp -o StrictHostKeyChecking=no target/maven-web-application.war tomcat2@172.31.7.181:/opt/tomcat/webapps/'
+            }
+        }
+    }
+}
+}
