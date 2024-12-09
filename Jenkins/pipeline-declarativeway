@@ -23,4 +23,19 @@ tools {
         }
     }
 }
+post {
+  always {
+    // One or more steps need to be included within each condition's block.
+    sh 'echo "always condition"'
+  }
+  success {
+    // One or more steps need to be included within each condition's block.
+    sh 'echo "success condition"'
+  }
+  failure {
+    // One or more steps need to be included within each condition's block.
+    sh 'echo "failure condition"'
+  }
+}
+
 }
