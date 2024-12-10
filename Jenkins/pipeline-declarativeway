@@ -3,6 +3,15 @@ pipeline {
 tools {
   maven 'maven3.9'
 }
+options {
+  timestamps()
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '2', daysToKeepStr: '', numToKeepStr: '2')
+}
+triggers {
+  //cron '* * * * *'
+  githubPush()
+  //pollSCM '* * * * *'
+}
     stages {
         stage('checkoutcode') {
             steps {
@@ -11,7 +20,14 @@ tools {
         }
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                script {
+                if (isUnix()){
+                    sh 'mvn clean package'
+                }
+                else {
+                bat 'mvn clean package'
+            }
+                }
             }
         }
         stage('Deploy') {
