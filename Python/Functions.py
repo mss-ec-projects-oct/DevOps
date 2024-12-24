@@ -29,3 +29,20 @@ def greetings(MSG="Morning"):
     print("Welcome to the function")
 greetings()
 greetings("Evening")
+
+# keyword Arguments
+def vac_feedback(vac, efficacy):
+    print(f"{vac} vaccine is having {efficacy}% efficacy")
+    if (efficacy>50) and (efficacy<=75):
+        print("seems not so effective, needs more trail.")
+    elif (efficacy>75) and (efficacy<90):
+        print("can consider this vaccine.")
+    elif efficacy >= 90:
+        print("Sure, will take the shot.")
+    else:
+        print("needs many more trails")
+
+#vac_feedback("pfizer", 95)
+#vac_feedback(45,"unknown")
+vac_feedback(efficacy=45, vac="unknown")
+
