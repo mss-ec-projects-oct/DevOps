@@ -9,6 +9,7 @@ def oddeven():
 
 #oddeven()
 
+
 def prime():
     num=int(input("Enter the number: "))
     if num > 1:
