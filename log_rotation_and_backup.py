@@ -6,7 +6,7 @@ import datetime
 
 logdir="/root/logs"
 backupdir='/root/backup'
-cutoff_days=7
+cutoff_days=8
 
 os.makedirs(backupdir, exist_ok=True)
 
