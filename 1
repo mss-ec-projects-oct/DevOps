@@ -1,0 +1,30 @@
+#!/bin/python3
+
+def rev_str(s):
+    #reverse_string=s[::-1]
+    return s[::-1]
+
+#ori_str=input("Enter a string to reverse: ")
+#print(f"reversed string: {rev_str(ori_str)}")
+
+def rev_estr(s): #split(),join()
+    words=s.split()
+    rev_words=' '.join(word[::-1] for word in words)
+    return rev_words
+#ori_str=input("Enter a string: ")
+#print(f"Reversed each word: {rev_estr(ori_str)}")
+
+def count_char(s):
+    cln_str=s.replace(' ','').lower()
+    char_count={}
+    for char in cln_str:
+        if char in char_count:
+            char_count[char]+=1
+        else:
+            char_count[char]=1
+    print("Duplicate characters:")
+    for char,count in char_count.items():
+        if count > 1:
+            print(f"{char}: {count} times")
+Str=input("Enter the string:")
+count_char(Str)
