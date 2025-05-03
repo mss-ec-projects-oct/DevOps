@@ -8,6 +8,7 @@ def oddeven():
         print(f"{num} is odd")
 
 #oddeven()
+
 def prime():
     num=int(input("Enter the number: "))
     if num > 1:
