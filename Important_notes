@@ -1,0 +1,24 @@
+mkdir <dir>
+cd <dir>
+
+git init
+
+git remote add origin <HTTPS>/<SSH>
+git remote -v
+git remote set-url origin <HTTPS>/<SSH>
+#Authentication HTTPS(username/password<= credential manager), SSH(public,private key)
+
+git config --global user.name "<name>"
+git config --global user.email "<email>"
+git config --global --list
+
+git branch 
+#Git needs at least one commit to create or manage branches properly. If your repo has no commits yet,trying to use git branch will fail because there's no master (or main) branch to base the new one on.
+
+vi <file>
+git add <file>
+git commit -m <commit message>
+
+git branch
+git branch <branch name>
+
