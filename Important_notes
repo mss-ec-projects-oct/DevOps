@@ -39,3 +39,17 @@ git push origin --all
 git branch -D <branch name>
 git push origin :<deleted branch name>
 
+#Working Area:
+git checkout <filename> #Rollback to last commit changes
+git diff  #what changes from current commit
+
+#Staging Area
+git diff --cached
+git restore --staged <filename>  #SA --> WA
+
+#commited
+git diff commit_id1..commit_id2
+git revert HEAD  #undo the last commit -->new commit with history
+git reset --hard <commit_id>  #no history
+
+
