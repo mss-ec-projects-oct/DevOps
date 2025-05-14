@@ -22,6 +22,8 @@ git add file
 git commit -m "commit message"  
 git status  
 
+vi .gitignore  #to ignore files and folders
+
 # Regular Use Commands:
 git log  
 git log --oneline  
@@ -35,6 +37,8 @@ git show --pretty='' --name-only commit-id
 git branch  
 git branch new_branch_name  
 git checkout new_branch_name  
+git branch -r  
+git branch -a   
 
 git push origin new_branch_name  
 git push origin bn1 bn2  
@@ -68,6 +72,15 @@ git stash drop stash@{1}
 or
 git stash pop stash@{1}      #(it will apply and delete)  
 
+cherry-pick:
+------------
+* git cherry-pick is used when you want to apply a specific commit (or commits) from one branch into another — without merging the whole branch.   
+git cherry-pick commit_id   
+- Resolve conflict manually   
+git add file_name    
+git cherry-pick --continue    
+
+
 
 #  Tags for semantic version:
  
@@ -85,7 +98,8 @@ Ex: 3.1.4
 TAG A COMMIT: Simply another name to a commit: 
 ----------------------------------------------
 git tag tag_name commit  
-git show tag  
+git show tag_name  
+git tag -d tag_name   
 
 ANNOTATED TAGS:  
 git tag -a tag_Name -m"message" [commit]  
