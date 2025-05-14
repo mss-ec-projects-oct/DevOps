@@ -1,6 +1,6 @@
 Git Setup:
 ----------
-mkdir <dir>
+mkdir <<dir>>
 cd <dir>
 touch file{1..10}.py
 
