@@ -1,4 +1,5 @@
-
+Git Setup:
+----------
 mkdir <dir>
 cd <dir>
 touch file{1..10}.py
@@ -22,6 +23,8 @@ git add <file>
 git commit -m <commit message>
 git status
 
+Regular Use Commands:
+---------------------
 git log
 git log --oneline
 git log -2
@@ -40,6 +43,8 @@ git push origin --all
 git branch -D <branch name>
 git push origin :<deleted branch name>
 
+Data Hadling:
+-------------
 #Working Area:
 git checkout <filename> #Rollback to last commit changes
 git diff  #what changes from current commit
@@ -53,20 +58,28 @@ git diff commit_id1..commit_id2
 git revert HEAD  #undo the last commit -->new commit with history
 git reset --hard <commit_id>  #no history
 
+#Stash
+git stash
+git stash list  #stash@{0}
+git stash apply stash@{1}
+git stash drop stash@{1}
+or
+git stash pop stash@{1}  #(it will apply and delete)
+
+
 #Tags for semantic version:
 ---------------------------
 Ex. VS Code version: 1.0.1
-Format:
-	PATCH <- Bug Fixes
-	MINOR <- New features and Improvements
-	MAJOR <- Major changes (Backward Incompatible)
-3.1.4
+Format:		
+PATCH <- Bug Fixes	
+MINOR <- New features and Improvements	
+MAJOR <- Major changes (Backward Incompatible)	
+Ex: 3.1.4
 3 - Major
 1 - Minor
 4 - Patch
 
-TAG A COMMIT: Simply another name to a commit.
--------------
+TAG A COMMIT: Simply another name to a commit: 
 git tag <tagname> commit
 git show tag
 
