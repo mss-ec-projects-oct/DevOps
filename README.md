@@ -1,14 +1,14 @@
 Git Setup:
 ----------
-mkdir <<dir>>
-cd <dir>
+mkdir dir
+cd dir
 touch file{1..10}.py
 
 git init
 
-git remote add origin <HTTPS>/<SSH>
-git remote -v #.git/config
-git remote set-url origin <HTTPS>/<SSH>
+git remote add origin HTTPS_URL/SSH_URL
+git remote -v  #.git/config  
+git remote set-url origin HTTPS_URL/SSH_URL
 #Authentication HTTPS(username/password<= credential manager), SSH(public,private key)
 
 git config --global user.name "<name>"
