@@ -21,6 +21,7 @@ vi file
 git add file  
 git commit -m "commit message"  
 git status  
+git commit --amend -m "an updated commit message"
 
 vi .gitignore  #to ignore files and folders
 
@@ -51,6 +52,7 @@ Working Area:
 -------------
 git checkout file_name   
 git diff      
+git clean -f  #remove all files which are in WA
 
 Staging Area
 ------------
