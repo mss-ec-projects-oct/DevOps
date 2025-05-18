@@ -17,3 +17,8 @@ return [''.join(p) for p in perms]
 - s[::-1] reverses the string.
 - .replace(" ", "") removes spaces (optional, depending on requirements).
 - .lower() makes it case-insensitive.
+
+08
+--
+- Anagrams => sorted(str1) == sorted(str2)
+
