@@ -126,4 +126,6 @@ PULL
 git config pull.rebase false  # merge (This is the traditional behavior:)
 git config pull.rebase true   # rebase (Recommended for linear history)
 git config pull.ff only       # fast-forward only (fail if merge is needed)
+#then
+git pull origin <branch name>
 ```
