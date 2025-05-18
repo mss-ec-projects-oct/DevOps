@@ -110,3 +110,20 @@ git tag -a v2.1.6 -m "Release for something"
 PUSH TAGS  
 git push origin tag tag_name  
 git push --tags   #All the tags  
+
+FETCH
+-----
+```
+git fetch origin <branch name>
+git diff origin/<branch name> <branch name>
+git merge origin/<branch name> --merge commit
+git rebase origin/<branch name> --no merge commit (Recommended for linear history)
+```
+PULL
+----
+- Git detected that your local branch and the remote branch have diverged (each has commits the other doesn't)  
+```
+git config pull.rebase false  # merge (This is the traditional behavior:)
+git config pull.rebase true   # rebase (Recommended for linear history)
+git config pull.ff only       # fast-forward only (fail if merge is needed)
+```
