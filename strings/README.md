@@ -20,5 +20,8 @@ return [''.join(p) for p in perms]
 
 08
 --
-- Anagrams => sorted(str1) == sorted(str2)
+- Anagrams => sorted(str1) == sorted(str2)  
+
+09  
+--
 
