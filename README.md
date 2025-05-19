@@ -25,6 +25,8 @@ git commit --amend -m "an updated commit message"
 
 vi .gitignore  #to ignore files and folders
 
+git clone {https/ssh repo url} -b branch_name
+
 # Regular Use Commands:
 git log  
 git log --oneline  
