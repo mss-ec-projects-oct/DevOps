@@ -56,3 +56,14 @@ else:
     print(f"{n} is not a palindrome number")
 print("-------------------------------")
 #Python program to calculate the sum of digits of a number
+def sum_of_digits(n):
+    n = abs(n)
+    total = 0
+    while n > 0:
+        x = n % 10
+        total += x
+        n //= 10
+    return total
+n = -12345
+print(f"sum of digits {n}: {sum_of_digits(n)}")
+print("-------------------------------")
