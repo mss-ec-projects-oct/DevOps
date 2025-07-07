@@ -4,3 +4,7 @@
 .cache/
 .ssh/
 .viminfo
+strings/dummmy.py
+strings/text.py
+strings/text1.py
+strings/text2.py
