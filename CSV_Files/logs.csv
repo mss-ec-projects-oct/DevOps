@@ -1,3 +1,5 @@
 date,log level,Message
 09-07-25,Info,Script Started
 09-07-25,ERROR,Something went wrong
+14-07-2025,Append1,Appending the message1
+14-07-2025,Append2,Appending the message2
