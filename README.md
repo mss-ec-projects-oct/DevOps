@@ -11,4 +11,10 @@
     Revising the Basics of EC2
     Available Regions
     Virtual Machine Configuration
-        
+- Resource and Providers
+    Basics of Providers
+    Learning 1 - Provider Plugins
+    Learning 2 - Resource
+    Learning 3 - Resource Blocks
+    point to Note
+    Issues and Bugs with Providers        
