@@ -17,4 +17,7 @@
     Learning 2 - Resource
     Learning 3 - Resource Blocks
     point to Note
-    Issues and Bugs with Providers        
+    Issues and Bugs with Providers  
+- Provider Tiers    
+    Provider Maintainers    
+    Provider Namespace          
